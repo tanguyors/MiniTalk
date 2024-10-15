@@ -1,15 +1,28 @@
-#include "libft/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   client.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: torsini <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/14 13:08:50 by torsini           #+#    #+#             */
+/*   Updated: 2024/10/14 13:16:10 by torsini          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft/libft.h"
 
 void	send_signal(pid_t pid, int signal)
 {
-	usleep(100);
+	usleep(10);
 	kill(pid, signal);
 }
 
 void	send_char(pid_t pid, char c)
 {
-	int i = 7;
+	int	i;
+
+	i = 7;
 	while (i >= 0)
 	{
 		if ((c >> i) & 1)
@@ -26,21 +39,22 @@ void	send_char(pid_t pid, char c)
 
 int	main(int argc, char *argv[])
 {
+	int		i;
+	pid_t	pid;
+	char	*message;
+
 	if (argc != 3)
 	{
-		fprintf(stderr, "Usage: %s <PID> <message>\n", argv[0]);
+		ft_printf("Must be <PID> <YOUR MESSAGE>");
 		return (1);
 	}
-
-	pid_t pid = atoi(argv[1]);
-	char *message = argv[2];
-
-	int i = 0;
+	pid = ft_atoi(argv[1]);
+	message = argv[2];
+	i = 0;
 	while (message[i])
 	{
 		send_char(pid, message[i]);
 		++i;
 	}
-
 	return (0);
 }

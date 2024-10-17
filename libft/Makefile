@@ -6,12 +6,12 @@
 #    By: torsini <torsini@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 11:00:22 by torsini           #+#    #+#              #
-#    Updated: 2024/10/14 16:06:24 by torsini          ###   ########.fr        #
+#    Updated: 2024/03/20 11:10:31 by torsini          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+FLAG = -Wall -Werror -Wextra
 
 SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
       ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c \

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   serveur.c                                          :+:      :+:    :+:   */
+/*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: torsini <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -31,7 +31,12 @@ void	signal_handler(int signal)
 	if (bit_count == 8)
 	{
 		c = (char)g_bits;
-		write(1, &c, 1);
+		if (c == '\0')
+		{
+			ft_putchar_fd('\n', 1);
+		}
+		else
+			write(1, &c, 1);
 		g_bits = 0;
 		bit_count = 0;
 	}

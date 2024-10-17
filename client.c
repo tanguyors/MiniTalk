@@ -6,7 +6,7 @@
 /*   By: torsini <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 13:08:50 by torsini           #+#    #+#             */
-/*   Updated: 2024/10/14 13:16:10 by torsini          ###   ########.fr       */
+/*   Updated: 2024/10/16 17:29:34 by torsini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	send_signal(pid_t pid, int signal)
 {
-	usleep(10);
+	usleep(150);
 	kill(pid, signal);
 }
 
@@ -56,5 +56,6 @@ int	main(int argc, char *argv[])
 		send_char(pid, message[i]);
 		++i;
 	}
+	send_char(pid, '\0');
 	return (0);
 }

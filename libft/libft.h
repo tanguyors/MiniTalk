@@ -6,7 +6,7 @@
 /*   By: torsini <torsini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 17:38:45 by torsini           #+#    #+#             */
-/*   Updated: 2024/10/14 10:06:06 by torsini          ###   ########.fr       */
+/*   Updated: 2024/10/15 10:23:46 by torsini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@
 # include <signal.h>
 # include <stdarg.h>
 # include <stddef.h>
-# include <stdio.h>
-# include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <stdlib.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
